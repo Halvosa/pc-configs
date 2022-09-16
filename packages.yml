@@ -11,6 +11,8 @@ packages:
     - radare2
     - ghidra
     - curl
+    - wireshark
+    - ethtool
   apps:
     - audacity
     - blender
@@ -23,6 +25,9 @@ packages:
     - discord
     - firefox
     - flameshot     # Screenshots
+    - krita         # Painting/drawing
+    - minecraft-launcher
+    - openrct2      # rollercoaster tycoon 2
   dev:
     - vscode
     - qemu-kvm
@@ -32,7 +37,17 @@ packages:
     - qemu-system-x86
     - vagrant
     - gcc-multilib  # for compiling elf32
-    - gns3
+    - gns3-server
     - git
+    - libosinfo-bin
+    - gcc
+    - nasm
+    - libguestfs-tools
+    - mono-devel
+    - make
   os-extensions:
     - ulauncher
+    - gnome-tweaks
+    - gnome-sushi
+  drivers:
+    #- nvidia?
