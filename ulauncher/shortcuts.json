@@ -1,0 +1,52 @@
+{                                     
+    "05c79ba0-a9ec-40ab-879f-0e8e3a66d85f": {                                                        
+        "id": "05c79ba0-a9ec-40ab-879f-0e8e3a66d85f",                                                
+        "name": "Google Search",                                              
+        "keyword": "g",                                                       
+        "cmd": "https://google.com/search?q=%s",                                                     
+        "icon": "/usr/share/ulauncher/media/google-search-icon.png",                                 
+        "is_default_search": true,                                            
+        "run_without_argument": false,                                        
+        "added": 1637075122.298416
+    },                                
+    "1c56f3ce-fc53-47ff-acf3-27ee0404054c": {                                                        
+        "id": "1c56f3ce-fc53-47ff-acf3-27ee0404054c",                                                
+        "name": "Stack Overflow",                                             
+        "keyword": "so",                                                      
+        "cmd": "https://stackoverflow.com/search?q=%s",                                              
+        "icon": "/usr/share/ulauncher/media/stackoverflow-icon.svg",                                 
+        "is_default_search": true,                                            
+        "run_without_argument": false,                                        
+        "added": 1637075122.2985225
+    },                                
+    "7b41e166-b78c-4075-b441-29eb7ee3377c": {                                                        
+        "id": "7b41e166-b78c-4075-b441-29eb7ee3377c",                                                
+        "name": "Wikipedia",                                                  
+        "keyword": "wiki",                                                    
+        "cmd": "https://en.wikipedia.org/wiki/%s",                                                   
+        "icon": "/usr/share/ulauncher/media/wikipedia-icon.png",                                     
+        "is_default_search": true,                                            
+        "run_without_argument": false,
+        "added": 1637075122.2985911
+    },                                
+    "1683ca54-81fd-4828-9645-7d43b40fa37a": {                                                        
+        "id": "1683ca54-81fd-4828-9645-7d43b40fa37a",                                                
+        "name": "Linux source code",                                          
+        "keyword": "kernel",                                                  
+        "cmd": "https://github.com/torvalds/linux/search?q=%s",                                      
+        "icon": null,   
+        "is_default_search": false,                                           
+        "run_without_argument": false,
+        "added": 1663355991.8531852
+    },                                
+    "6f5c80cc-a35e-46fd-8017-00dfcf76f8b7": {                                                        
+        "id": "6f5c80cc-a35e-46fd-8017-00dfcf76f8b7",                                                
+        "name": "Youtube",                        
+        "keyword": "yt",                          
+        "cmd": "https://www.youtube.com/results?search_query=%s",                                    
+        "icon": null,                             
+        "is_default_search": false,               
+        "run_without_argument": false,            
+        "added": 1663357251.3797176               
+    }                                             
+}
