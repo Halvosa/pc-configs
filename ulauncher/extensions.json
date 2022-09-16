@@ -1,0 +1,16 @@
+{
+    "com.github.ncroxas.coingecko-query": {
+        "id": "com.github.ncroxas.coingecko-query",
+        "url": "https://github.com/NCRoxas/coingecko-query",
+        "updated_at": "2021-11-16T16:16:42.236866",
+        "last_commit": "39cba721e9836ab44072b8067005c4e9832e86b6",
+        "last_commit_time": "2021-06-30T17:00:40"
+    },
+    "com.github.melianmiko.ulauncher-bluetoothd": {
+        "id": "com.github.melianmiko.ulauncher-bluetoothd",
+        "url": "https://github.com/melianmiko/ulauncher-bluetoothd",
+        "updated_at": "2021-11-16T16:20:05.270076",
+        "last_commit": "ae8a1d0686d5230e9b30a6cdf45ca6edb4e68e63",
+        "last_commit_time": "2021-09-11T12:39:49"
+    }
+}
