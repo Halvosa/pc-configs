@@ -13,6 +13,13 @@ packages:
     - curl
     - wireshark
     - ethtool
+    - pdftk
+    - pdfinfo
+    - lm-sensors
+    - xxd
+    - objdump
+    - strace
+    - ltrace
   apps:
     - audacity
     - blender
@@ -28,6 +35,8 @@ packages:
     - krita         # Painting/drawing
     - minecraft-launcher
     - openrct2      # rollercoaster tycoon 2
+    - packettracer
+    - spotify
   dev:
     - vscode
     - qemu-kvm
@@ -42,12 +51,18 @@ packages:
     - libosinfo-bin
     - gcc
     - nasm
+    - build-essential
     - libguestfs-tools
     - mono-devel
     - make
+    - python3-pip
+    
   os-extensions:
-    - ulauncher
+    - ulauncher             # ctrl-space for "spotlight" search bar
     - gnome-tweaks
-    - gnome-sushi
+    - gnome-sushi           # space to view files
+    - gstreamer1.0-libav    # these gstreamer packages 
+    - gstreamer1.0-gtk3     # is for sushi to work with video
+    - gstreamer1.0-pulseaudio
   drivers:
-    #- nvidia?
+    - nvidia-settings
