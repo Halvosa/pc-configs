@@ -1,0 +1,24 @@
+packages:
+  tools:
+    - vim
+    - tmux
+    - tcpdum
+    - qpdf
+    - python3
+    - htop
+  apps:
+    - audacity
+    - blender
+    - brave-browser
+    - scribus       # Like Adobe InDesign
+    - transmission  # Torrents
+    - steam-launcher
+    - vlc
+  dev:
+    - vscode
+    - qemu-kvm
+    - virt-manager  # includes libvirt-daemon-system, virt-install, qemu-system-*
+    - vagrant
+    - gcc-multilib  # for compiling elf32
+  os-extensions:
+    - ulauncher
