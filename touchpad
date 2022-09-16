@@ -1,0 +1,50 @@
+halvor@halvor-MACH-WX9:~$ xinput list
+⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]
+⎜   ↳ SYNA2393:00 06CB:19AB                   	id=11	[slave  pointer  (2)]
+⎜   ↳ SYNA1D31:00 06CB:CD48 Mouse             	id=12	[slave  pointer  (2)]
+⎜   ↳ SYNA1D31:00 06CB:CD48 Touchpad          	id=13	[slave  pointer  (2)]
+⎣ Virtual core keyboard                   	id=3	[master keyboard (2)]
+    ↳ Virtual core XTEST keyboard             	id=5	[slave  keyboard (3)]
+    ↳ Power Button                            	id=6	[slave  keyboard (3)]
+    ↳ Video Bus                               	id=7	[slave  keyboard (3)]
+    ↳ Video Bus                               	id=8	[slave  keyboard (3)]
+    ↳ Power Button                            	id=9	[slave  keyboard (3)]
+    ↳ HD Camera: HD Camera                    	id=10	[slave  keyboard (3)]
+    ↳ AT Translated Set 2 keyboard            	id=15	[slave  keyboard (3)]
+    ↳ Huawei WMI hotkeys                      	id=14	[slave  keyboard (3)]
+halvor@halvor-MACH-WX9:~$ xinput list-props 13
+Device 'SYNA1D31:00 06CB:CD48 Touchpad':
+	Device Enabled (213):	1
+	Coordinate Transformation Matrix (215):	1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000
+	libinput Tapping Enabled (369):	1
+	libinput Tapping Enabled Default (370):	0
+	libinput Tapping Drag Enabled (371):	1
+	libinput Tapping Drag Enabled Default (372):	1
+	libinput Tapping Drag Lock Enabled (373):	0
+	libinput Tapping Drag Lock Enabled Default (374):	0
+	libinput Tapping Button Mapping Enabled (375):	1, 0
+	libinput Tapping Button Mapping Default (376):	1, 0
+	libinput Natural Scrolling Enabled (353):	1
+	libinput Natural Scrolling Enabled Default (354):	0
+	libinput Disable While Typing Enabled (377):	1
+	libinput Disable While Typing Enabled Default (378):	1
+	libinput Scroll Methods Available (355):	1, 1, 0
+	libinput Scroll Method Enabled (356):	1, 0, 0
+	libinput Scroll Method Enabled Default (357):	1, 0, 0
+	libinput Click Methods Available (379):	1, 1
+	libinput Click Method Enabled (380):	0, 1
+	libinput Click Method Enabled Default (381):	1, 0
+	libinput Middle Emulation Enabled (382):	0
+	libinput Middle Emulation Enabled Default (383):	0
+	libinput Accel Speed (360):	0.000000
+	libinput Accel Speed Default (361):	0.000000
+	libinput Left Handed Enabled (365):	0
+	libinput Left Handed Enabled Default (366):	0
+	libinput Send Events Modes Available (334):	1, 1
+	libinput Send Events Mode Enabled (335):	0, 0
+	libinput Send Events Mode Enabled Default (336):	0, 0
+	Device Node (337):	"/dev/input/event6"
+	Device Product ID (338):	1739, 52552
+	libinput Drag Lock Buttons (367):	<no items>
+	libinput Horizontal Scroll Enabled (368):	1
