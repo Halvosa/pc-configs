@@ -6,6 +6,11 @@ packages:
     - qpdf
     - python3
     - htop
+    - netcat-openbsd
+    - gdb
+    - radare2
+    - ghidra
+    - curl
   apps:
     - audacity
     - blender
@@ -14,11 +19,20 @@ packages:
     - transmission  # Torrents
     - steam-launcher
     - vlc
+    - gimp
+    - discord
+    - firefox
+    - flameshot     # Screenshots
   dev:
     - vscode
     - qemu-kvm
-    - virt-manager  # includes libvirt-daemon-system, virt-install, qemu-system-*
+    - virt-manager
+    - libvirt-daemon-system
+    - qemu-img
+    - qemu-system-x86
     - vagrant
     - gcc-multilib  # for compiling elf32
+    - gns3
+    - git
   os-extensions:
     - ulauncher
