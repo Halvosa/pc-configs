@@ -67,5 +67,6 @@ packages:
     - tlp       # battery saver
     - tlp-rdw
     - gnome-shell-extension-gsconnect   # phone integration
+    - gnome-shell-extension-gsconnect-browsers
   drivers:
     - nvidia-settings
