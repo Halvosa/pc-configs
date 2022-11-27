@@ -64,5 +64,8 @@ packages:
     - gstreamer1.0-libav    # these gstreamer packages 
     - gstreamer1.0-gtk3     # is for sushi to work with video
     - gstreamer1.0-pulseaudio
+    - tlp       # battery saver
+    - tlp-rdw
+    - gnome-shell-extension-gsconnect   # phone integration
   drivers:
     - nvidia-settings
