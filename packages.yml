@@ -1,6 +1,7 @@
 packages:
   tools:
     - vim
+    - emacs
     - tmux
     - tcpdum
     - qpdf
