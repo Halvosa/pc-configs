@@ -59,6 +59,7 @@ packages:
     - python3-pip
     - godot
     - dotnet-sdk-7.0
+    - ctags
     
   os-extensions:
     - ulauncher             # ctrl-space for "spotlight" search bar
