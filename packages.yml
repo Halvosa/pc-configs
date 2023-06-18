@@ -21,6 +21,7 @@ packages:
     - objdump
     - strace
     - ltrace
+    - graphviz
   apps:
     - audacity
     - blender
