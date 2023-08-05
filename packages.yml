@@ -39,6 +39,7 @@ packages:
     - openrct2      # rollercoaster tycoon 2
     - packettracer
     - spotify
+    - obs-studio   # Open Broadcaster Software
   dev:
     - vscode
     - qemu-kvm
