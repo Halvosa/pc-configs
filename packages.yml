@@ -74,5 +74,6 @@ packages:
     - tlp-rdw
     - gnome-shell-extension-gsconnect   # phone integration
     - gnome-shell-extension-gsconnect-browsers
+    - i3    # Window manager
   drivers:
     - nvidia-settings
