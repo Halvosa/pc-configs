@@ -77,3 +77,6 @@ packages:
     - i3    # Window manager
   drivers:
     - nvidia-settings
+
+  i3:
+    - blueman  # bluetooth manager 
