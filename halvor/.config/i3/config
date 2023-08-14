@@ -1,0 +1,11 @@
+# Append this to the default i3 config
+
+# To use multiple monitors. List output devices with just "$ xrandr".
+# Here, DP-2 is the external monitor, --auto means preferred resolution,
+# and --right-of means to put it to the right of eDP-1 which is the laptop monitor.
+exec --no-startup-id xrandr --output DP-2 --auto --right-of eDP-1 &
+
+bindsym $mod+p move workspace to output right
+  
+# Lock screen
+bindsym $mod+shift+x exec i3lock
