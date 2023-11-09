@@ -13,3 +13,6 @@ sudo ufw reload
 
 # Install packages
 pip install python-language-server
+
+# Install node.js for vim coc
+curl -sL install-node.vercel.app/lts | bash
