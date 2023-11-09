@@ -10,3 +10,6 @@ sudo ufw allow 1714:1764/udp  # kde/gs connect
 sudo ufw allow 1714:1764/tcp
 
 sudo ufw reload
+
+# Install packages
+pip install python-language-server
