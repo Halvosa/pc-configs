@@ -16,6 +16,9 @@ Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'prabirshrestha/vim-lsp' " Turns Vim into an LSP client
 Plug 'mattn/vim-lsp-settings' " For easy/automatic installation and configuration of LSP servers 
 Plug 'tpope/vim-surround'
+Plug 'https://github.com/stefandtw/quickfix-reflector.vim'
+Plug 'jremmen/vim-ripgrep' " requires package ripgrep
+Plug 'vifm/vifm.vim' " + requires package vifm
 
 " Code completion
 Plug 'prabirshrestha/asyncomplete.vim' " Completion engine. Sources/language servers are installed separately.
@@ -40,7 +43,17 @@ Plug 'https://github.com/ctrlpvim/ctrlp.vim.git' " Ctrl-p fuzzy search
 "Plug 'andreypopp/asyncomplete-ale.vim'
 
 
+" ------ Design/Visual ------
+
+Plug 'vim-airline/vim-airline'
+
+" Themes
+Plug 'gilgigilgil/anderson.vim' " colorscheme 'anderson'
+Plug 'danilo-augusto/vim-afterglow' " colorscheme 'afterglow'
+Plug 'tomasiser/vim-code-dark' "colorscheme 'codedark'
+
 call plug#end()
+
 
 " ----------------------------------------------------
 "                   General
@@ -55,7 +68,6 @@ set number
 set wildmenu
 set path+=** " So that you can fuzzy search filenames with 'find *substring'
 set ignorecase
-colorscheme desert
 
 set foldmethod=indent
 set foldlevel=99
@@ -64,6 +76,7 @@ set foldlevel=99
 autocmd BufWritePre *.py %s/\s\+$//e
 autocmd BufWritePre *.yml %s/\s\+$//e
 autocmd BufWritePre *.yaml %s/\s\+$//e
+
 
 
 " ----------------------------------------------------
@@ -98,10 +111,15 @@ let g:coc_filetype_map = {
 " ----------------------------------------------------
 
 nnoremap FF :CtrlP<cr>                          " Fuzzy search with CtrlP plugin
-nnoremap <Leader>p :find<Space>*
+nnoremap <Leader>f :find<Space>*
 nnoremap <Leader>b :buffers<CR>:buffer<Space>
+nnoremap <Leader>g :vert Git<CR>
+nnoremap <Leader>r :Rg<Space>
+nnoremap <Leader>e :vert Vifm<CR>
+nnoremap <Leader>s :VsplitVifm<CR>
 
-" Auto-close quotes and brackets etc
+" Auto-close quotes and brackets etc. Use Ctrl-v or Ctrl-q to escape this if
+" you only need one quote or bracket.
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
@@ -109,6 +127,8 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
+
+
 
 
 " ----------------------------------------------------
@@ -137,6 +157,30 @@ inoremap {;<CR> {<CR>};<ESC>O
 
 
 
-highlight Normal ctermfg=white ctermbg=black
+""highlight Normal ctermfg=white ctermbg=black
+
+
+
+
+" ----------------------------------------------------
+"                   Visuals
+" ----------------------------------------------------
+let currScheme = "codedark"
+
+"colorscheme afterglow
+execute "colorscheme " . currScheme
+
+execute "let g:airline_theme='" . currScheme . "'"
+let g:afterglow_italic_comments=1
+"let g:afterglow_blackout=1
+let g:afterglow_inherit_background=1
+
+
+
+
+" To install colorschemes for vifm:
+" 1. Find one you like here: https://vifm.info/colorschemes.shtml
+" 2. Run 'wget -P ~/.vifm/colors https://raw.githubusercontent.com/vifm/vifm-colors/master/onedark.vifm'
+" 3. Run 'echo "colorscheme onedark" >> ~/.config/vifm/vifmrc'
 
 
