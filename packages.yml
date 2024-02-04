@@ -22,6 +22,7 @@ packages:
     - strace
     - ltrace
     - graphviz
+    - ripgrep
   apps:
     - audacity
     - blender
