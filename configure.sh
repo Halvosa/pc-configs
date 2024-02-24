@@ -16,3 +16,9 @@ pip install python-language-server
 
 # Install node.js for vim coc
 curl -sL install-node.vercel.app/lts | bash
+
+# Git
+sudo apt-get install libsecret-1-0 libsecret-1-dev
+cd /usr/share/doc/git/contrib/credential/libsecret
+sudo make
+git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
