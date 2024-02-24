@@ -115,8 +115,10 @@ nnoremap <Leader>f :find<Space>*
 nnoremap <Leader>b :buffers<CR>:buffer<Space>
 nnoremap <Leader>g :vert Git<CR>
 nnoremap <Leader>r :Rg<Space>
-nnoremap <Leader>e :vert Vifm<CR>
-nnoremap <Leader>s :VsplitVifm<CR>
+nnoremap <Leader>e :Explore<CR>
+" nnoremap <Leader>e :vert Vifm<CR>
+nnoremap <Leader>s :Vexplore<CR>
+" nnoremap <Leader>s :VsplitVifm<CR>
 
 " Auto-close quotes and brackets etc. Use Ctrl-v or Ctrl-q to escape this if
 " you only need one quote or bracket.
