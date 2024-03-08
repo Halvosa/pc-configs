@@ -68,6 +68,8 @@ set number
 set wildmenu
 set path+=** " So that you can fuzzy search filenames with 'find *substring'
 set ignorecase
+set wildignore+=.git/*
+
 
 set foldmethod=indent
 set foldlevel=99
@@ -119,6 +121,8 @@ nnoremap <Leader>e :Explore<CR>
 " nnoremap <Leader>e :vert Vifm<CR>
 nnoremap <Leader>s :Vexplore<CR>
 " nnoremap <Leader>s :VsplitVifm<CR>
+nnoremap <Leader>d :diffthis<CR>
+nnoremap <Leader>x :shell<CR>
 
 " Auto-close quotes and brackets etc. Use Ctrl-v or Ctrl-q to escape this if
 " you only need one quote or bracket.
