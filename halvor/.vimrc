@@ -64,7 +64,7 @@ source $VIMRUNTIME/defaults.vim
 
 syntax on
 filetype indent plugin on
-set number
+"set number
 set wildmenu
 set path+=** " So that you can fuzzy search filenames with 'find *substring'
 set ignorecase
@@ -113,15 +113,17 @@ let g:coc_filetype_map = {
 " ----------------------------------------------------
 
 nnoremap FF :CtrlP<cr>                          " Fuzzy search with CtrlP plugin
-nnoremap <Leader>f :find<Space>*
 nnoremap <Leader>b :buffers<CR>:buffer<Space>
-nnoremap <Leader>g :vert Git<CR>
-nnoremap <Leader>r :Rg<Space>
+nnoremap <Leader>d :diffthis<CR>
 nnoremap <Leader>e :Explore<CR>
 " nnoremap <Leader>e :vert Vifm<CR>
+nnoremap <Leader>f :find<Space>*
+nnoremap <Leader>g :vert Git<CR>
+nnoremap <Leader>tn :if &relativenumber == 0 \| set relativenumber \| else \| set norelativenumber \| endif<CR>
+"nnoremap <Leader>r :Rg<Space>
+nnoremap <Leader>r :grep<Space>-r<Space>.<left><left><Space>
 nnoremap <Leader>s :Vexplore<CR>
 " nnoremap <Leader>s :VsplitVifm<CR>
-nnoremap <Leader>d :diffthis<CR>
 nnoremap <Leader>x :shell<CR>
 
 " Auto-close quotes and brackets etc. Use Ctrl-v or Ctrl-q to escape this if
