@@ -1,0 +1,113 @@
+- hosts: localhost
+  connection: local
+  vars:
+    packages:
+      - ansible-lint
+      - vim
+      - git
+      - libsecret-1-0
+      - libsecret-1-dev
+      - tmux
+      - htop
+      - gdb
+      - lm-sensors
+      - ripgrep
+      - python3
+      - python3-pip
+      - transmission
+      - vlc
+      - gimp
+      - discord
+      - firefox
+      - gcc-multilib
+      - nasm
+      - gcc
+      - build-essential
+      - gnome-tweaks
+      - gnome-sushi
+      - gstreamer1.0-libav
+      - gstreamer1.0-gtk3
+      - gstreamer1.0-pulseaudio
+    pips:
+      - python-language-server
+    username: halvosa
+    git_config:
+      user.name: Halvor Sæther
+      user.email: halvor.sae@gmail.com
+      credential.helper: /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+    develop_dir_path: "/home/{{ username }}/Develop"
+  tasks:
+    - name: Install packages
+      become: true
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: latest
+
+    - name: Install Python packages with pip
+      become: true
+      ansible.builtin.pip:
+        name: "{{ pips }}"
+
+    - name: Create directory "Develop" for all things development
+      ansible.builtin.file:
+        state: directory
+        path: "{{ develop_dir_path }}"
+        owner: "{{ username }}"
+        group: "{{ username }}"
+
+    - name: Ensure .ssh directory exists
+      ansible.builtin.file:
+        state: directory
+        path: "/home/{{ username }}/.ssh"
+        owner: "{{ username }}"
+        group: "{{ username }}"
+        mode: 0700
+
+    - name: Generate SSH key pair
+      community.crypto.openssh_keypair:
+        type: ed25519
+        size: 4096
+        path: "/home/{{ username }}/.ssh/id_ed25519"
+
+    - name: Set global git config
+      community.general.git_config:
+        scope: global
+        name: "{{ item.key }}"
+        value: "{{ item.value }}"
+      loop: "{{ git_config | dict2items }}"
+
+    - name: Make git libsecret
+      become: true
+      community.general.make:
+        chdir: /usr/share/doc/git/contrib/credential/libsecret
+
+    - name: Clone personal git repo containing PC configs
+      ansible.builtin.git:
+        repo: "{{ repo_uri }}"
+        dest: "{{ develop_dir_path }}/pc-configs"
+        accept_hostkey: true
+      vars:
+        git_username: "{{ git_username | default(username) }}"
+        #repo_url: "https://github.com/halvosa/pc-configs.git"
+        repo_uri: "git@github.com:Halvosa/pc-configs.git"
+
+    - name: Append to .bashrc
+      ansible.builtin.blockinfile:
+        block: "{{ lookup('file', develop_dir_path + '/pc-configs/halvor/.bashrc') }}"
+        path: "/home/{{ username }}/.bashrc"
+        backup: true
+
+    - name: "Install node.js for Vim's COC"
+      ansible.builtin.shell:
+        cmd: 'curl -sL install-node.vercel.app/lts | bash'
+
+    - name: Deploy .vimrc and .tmux.conf
+      ansible.builtin.copy:
+        src: "{{ develop_dir_path }}/pc-configs/halvor/{{ item }}"
+        dest: "/home/{{ username }}/{{ item }}"
+        owner: "{{ username }}"
+        group: "{{ username }}"
+      loop:
+        - .vimrc
+        - .tmux.conf
+
