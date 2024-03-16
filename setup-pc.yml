@@ -1,6 +1,7 @@
 - hosts: localhost
   connection: local
   vars:
+    enable_wayland: true
     packages:
       - ansible-lint
       - vim
@@ -48,6 +49,14 @@
       ansible.builtin.pip:
         name: "{{ pips }}"
 
+    - name: Enable Wayland
+      when: enable_wayland
+      become: true
+      ansible.builtin.lineinfile:
+        path: /etc/gdm3/custom.conf
+        regexp: '^WaylandEnable='
+        line: 'WaylandEnable=true'
+
     - name: Create directory "Develop" for all things development
       ansible.builtin.file:
         state: directory
@@ -90,16 +99,13 @@
         git_username: "{{ git_username | default(username) }}"
         #repo_url: "https://github.com/halvosa/pc-configs.git"
         repo_uri: "git@github.com:Halvosa/pc-configs.git"
+      tags: clone
 
     - name: Append to .bashrc
       ansible.builtin.blockinfile:
         block: "{{ lookup('file', develop_dir_path + '/pc-configs/halvor/.bashrc') }}"
         path: "/home/{{ username }}/.bashrc"
         backup: true
-
-    - name: "Install node.js for Vim's COC"
-      ansible.builtin.shell:
-        cmd: 'curl -sL install-node.vercel.app/lts | bash'
 
     - name: Deploy .vimrc and .tmux.conf
       ansible.builtin.copy:
@@ -110,4 +116,31 @@
       loop:
         - .vimrc
         - .tmux.conf
+
+    - tags: gnome-keybindings
+      block:
+        - name: "GNOME settings: number of workspaces"
+          ansible.builtin.command:
+            cmd: "gsettings set {{ item }}"
+          loop:
+            - "org.gnome.mutter dynamic-workspaces false"
+            - "org.gnome.desktop.wm.preferences num-workspaces 4"
+
+        - name: "GNOME settings: switch workspace keybindings"
+          ansible.builtin.command:
+            cmd: "gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-{{ item }} \"['<Super>{{ item }}']\""
+          loop: [1,2,3,4]
+
+        - name: "GNOME settings: move to workspace keybindings"
+          ansible.builtin.command:
+            cmd: "gsettings set {{ item }}"
+          loop:
+            - "org.gnome.desktop.wm.keybindings move-to-workspace-1 \"['<Shift><Super>exclam']\""
+            - "org.gnome.desktop.wm.keybindings move-to-workspace-2 \"['<Shift><Super>quotedbl']\""
+            - "org.gnome.desktop.wm.keybindings move-to-workspace-3 \"['<Shift><Super>numbersign']\""
+            - "org.gnome.desktop.wm.keybindings move-to-workspace-4 \"['<Shift><Super>currency']\""
+
+    - name: "Install node.js for Vim's COC"
+      ansible.builtin.shell:
+        cmd: 'curl -sL install-node.vercel.app/lts | bash'
 
