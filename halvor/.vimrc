@@ -126,6 +126,23 @@ nnoremap <Leader>s :Vexplore<CR>
 " nnoremap <Leader>s :VsplitVifm<CR>
 nnoremap <Leader>x :shell<CR>
 
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap 
+
+" Go to last active tab
+au TabLeave * let g:lasttab = tabpagenr()
+nnoremap <silent> <leader>0 :exe "tabn ".g:lasttab<cr>
+vnoremap <silent> <leader>0 :exe "tabn ".g:lasttab<cr>
+
 " Auto-close quotes and brackets etc. Use Ctrl-v or Ctrl-q to escape this if
 " you only need one quote or bracket.
 inoremap " ""<left>
