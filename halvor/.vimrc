@@ -135,8 +135,7 @@ noremap <leader>5 5gt
 noremap <leader>6 6gt
 noremap <leader>7 7gt
 noremap <leader>8 8gt
-noremap <leader>9 9gt
-noremap 
+noremap <leader>9 9gt 
 
 " Go to last active tab
 au TabLeave * let g:lasttab = tabpagenr()
