@@ -124,7 +124,8 @@ nnoremap <Leader>tn :if &relativenumber == 0 \| set relativenumber \| else \| se
 nnoremap <Leader>r :grep<Space>-r<Space>.<left><left><Space>
 nnoremap <Leader>s :Vexplore<CR>
 " nnoremap <Leader>s :VsplitVifm<CR>
-nnoremap <Leader>x :shell<CR>
+nnoremap <Leader>x :let $VIM_DIR=expand('%:p:h')<CR>:terminal<CR>cd $VIM_DIR<CR>
+
 
 " Go to tab by number
 noremap <leader>1 1gt
